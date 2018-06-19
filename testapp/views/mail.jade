@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    ul#menu
+      li 
+        a(href='/')='TOP'
+      li
+        a(href='/schedule')='スケジュール'
+      li
+        a(href='/')='買うものリスト'
+      li
+        a(href='/book',class='active')='読書済みリスト'
+      li
+        a(href='/bookplan')='読書予定'
+      li
+        a(href='/anime')='アニメリスト'
+      li
+        a(href='/mail')='メール'
+
+    h1= title
+    p Welcome to #{title}
+    pre=data2

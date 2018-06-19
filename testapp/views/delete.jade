@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    p= 'Title:' + data.title
+    form(method='post', action='/book/remove')
+        input(type='hidden',name='id',value='#{data._id}')
+        input(type='submit', value = '削除する')

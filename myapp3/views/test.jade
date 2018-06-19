@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div(align='center')
+    h1= title
+    p #{title}
+    p#msg #{msg}
+    table(border='1')
+    form(action='/test', method='post')
+      input(type='text',name='name')
+      br
+      input(type='text',name='mail')
+      br 
+      input(type='text',name='memo')
+      br
+      input(type='submit',value='send')
+    hr
+    table(border='1')
+      tr
+        th name
+        th mail
+        th memo
+        each data in datas
+          tr
+            td= data.name
+            td= data.mail
+            td= data.memo

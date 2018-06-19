@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  ul#menu
+    li 
+      a(href='/')='TOP'
+    li
+      a(href='/')='スケジュール'
+    li
+      a(href='/')='買うものリスト'
+    li
+      a(href='/book')='読書済みリスト'
+    li
+      a(href='/bookplan',class='active')='読書予定'
+    li
+      a(href='/anime')='アニメリスト'
+  div#list
+    h1= title
+    p Welcome to #{title}
+    form(action='/book', method='post')
+        label(for='text1') 題名: 
+        input(type='text',name='titleplan')
+        br
+        input(type='submit',value='登録')
+    table(border='1',align='center')

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul#menu
+      li 
+        a(href='/',class='active')='TOP'
+      li
+        a(href='/schedule')='スケジュール'
+      li
+        a(href='/')='買うものリスト'
+      li
+        a(href='/book')='読書済みリスト'
+      li
+        a(href='/bookplan')='読書予定'
+      li
+        a(href='/anime')='アニメリスト'
+      
+    

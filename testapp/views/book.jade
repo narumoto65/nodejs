@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  ul#menu
+    li 
+      a(href='/')='TOP'
+    li
+      a(href='/')='スケジュール'
+    li
+      a(href='/')='買うものリスト'
+    li
+      a(href='/book',class='active')='読書済みリスト'
+    li
+      a(href='/bookplan')='読書予定'
+    li
+      a(href='/anime')='アニメリスト'
+    li
+      a(href='/mail')='メール'
+  div#list
+    h1= title
+    p Welcome to #{title}
+    form(action='/book', method='post')
+        label(for='text1') 題名:
+        textarea(name='title',cols='40',rows='1')
+        br
+        label(for='author') 作者:
+        textarea(name='author',cols='40',rows='1')
+        br
+        label(for='text2') 概要:
+        textarea(name='summary',cols='40',rows='4')
+        br
+        label(for='text3') 感想:
+        textarea(name='review',cols='40',rows='4')
+        br
+        input(type='submit',value='追加')  
+    table(border='1',align='center')
+        tr
+          th 題名 
+          th 作者
+          th 概要
+          th 感想
+          th
+          th
+          each data in datas
+            tr
+              td= data.title
+              td= data.author
+              td= data.summary
+              td= data.review
+              td
+                a(href="/book/edit/#{data._id}")='編集'
+              td
+                a(href="/book/delete/#{data._id}")='削除'
+        

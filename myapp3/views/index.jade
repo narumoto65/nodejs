@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div(align='center')
+    h1= title
+    p Welcome to #{title}
+    p= msg
+    form(method='post', action='/')
+      table
+        tr
+          td
+            p ID:
+          td
+            input(type='text',name='name')
+        tr
+          td
+            p Password:
+          td 
+            input(type='password', name='pass')
+        tr
+          td
+          td
+            input(type='submit')

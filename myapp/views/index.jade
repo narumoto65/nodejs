@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p= msg
+  table
+    tr
+      th id
+      th name
+      th mail
+      th tel
+      each data in datas
+      tr 
+        td= data.id
+        td= data.name
+        td= data.mail
+        td= data.tel
+          
